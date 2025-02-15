@@ -256,8 +256,9 @@ body{
 .namee{
     margin-top: 650px;
     margin-left: 1400px;
-    background: #000;
-    border: 2px solid whitesmoke;
+    background: #bbccb9;
+    border: 2px solid rgb(0, 0, 0);
     font-size: large;
-    color: white;
+    color: rgb(0, 0, 0);
+    border-radius: 25px;
 }
