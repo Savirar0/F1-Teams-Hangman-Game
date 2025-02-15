@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background: hsl(193, 81%, 45%);
+    font-family: "Atkinson Hyperlegible Mono", serif;
+}
+
+.container{
+    padding: 15px 10px 20px 10px;
+    width:325px;
+    background: wheat;
+    position:absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+
+}
+
+.container.wrong-guesses{
+
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.container.wrong-guesses span{
+    font-weight: 600;
+}
+
+.container .reset-btn{
+    all:unset;
+    width: 50px;
+    padding: 1px;
+    background: rgb(230, 238, 9);
+    color: black;
+    border: 2px solid rgb(77, 255, 0);
+    text-align: center;
+    font-size: 12px;
+    float:right;
+    border-radius: 4px;
+    margin-right: 3px;
+}
+
+.container .hangman-body{
+    height:140px;
+    width:230px;
+    border:1px solid rgb(165, 214, 209);
+    padding-bottom: 10px;
+    margin-left: 35px;
+    margin-top: 20px;
+    border-radius: 3px;
+}
+
+
+.container .hangman-body span:nth-child(1),
+.container .hangman-body span:nth-child(2),
+.container .hangman-body span:nth-child(3),
+.container .hangman-body span:nth-child(4),
+.container .hangman-body span:nth-child(6),
+.container .hangman-body span:nth-child(7),
+.container .hangman-body span:nth-child(8)
+{
+    height: 2px;
+    width: 30px;
+    background: black;
+    position: absolute;
+    margin-top: 130px;
+    margin-left:25px
+}
+
+.container .hangman-body span:nth-child(1){
+    margin-left: 12px;
+
+}
+
+
+.container .hangman-body span:nth-child(2){
+    width: 2px;
+    height: 115px;
+    margin-top: 15px;
+}
+
+.container .hangman-body span:nth-child(3){
+    width:60px;
+    margin-top:15px;
+}
+
+.container .hangman-body span:nth-child(3)::before{
+    content: "";
+    height: 30px;
+    width: 2px;
+    background: black;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: -4px;
+    transform: rotate(45deg);
+    border-radius: 30px;
+}
+
+.container .hangman-body span:nth-child(4){
+    width: 2px;
+    height: 15px;
+    margin-top: 15px;
+    margin-left: 83px;
+}
+
+.container .hangman-body span:nth-child(5){
+    height:30px;
+    width: 30px;
+    background:wheat;
+    border: 1px solid rebeccapurple;
+    border-radius: 100%;
+    position: absolute;
+    margin-left:70px ;
+    margin-top: 30px;
+}
+
+.container .hangman-body span:nth-child(6){
+    height: 30px;
+    width: 1px;
+    margin-top: 60px;
+    margin-left: 83px;
+}
+
+.container .hangman-body span:nth-child(7),
+.container .hangman-body span:nth-child(8){
+    height:20px;
+    width:2px;
+    margin-left: 77px;
+    margin-top: 62px;
+    transform: rotate(40deg);
+}
+
+
+.container .hangman-body span:nth-child(8){
+    transform: rotate(-40deg);
+    margin-left: 89px;
+}
+
+.container .hangman-body #leg-one,
+.container .hangman-body #leg-two{
+    height: 15px;
+    width: 1px;
+    background: #000;
+    position: absolute;
+    margin-left: 78px;
+    margin-top: 88px;
+    transform: rotate(40deg);
+}
+
+.container .hangman-body #leg-two{
+    transform: rotate(-40deg);
+    margin-left:88px;
+}
+
+.container .hangman-body .face,
+.container .hangman-body .stomach,
+.container .hangman-body .hand-one,
+.container .hangman-body .hand-two,
+.container .hangman-body #leg-one,
+.container .hangman-body #leg-two{
+    display: none;
+}
+
+
+.container .guess-word{
+    height: 60px;
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.container .guess-word p{
+    font-size: 12px;
+}
+
+.container .guess-word .wordSpotLight{
+    font-size: 15px;
+    position: relative;
+    top:7px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.container .keyboard-box{
+    height: 150px;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:0.5em;
+}
+
+.container .keyboard-box button{
+    all:unset;
+    background: wheat;
+    border:1px solid #000;
+    height: 20px;
+    width: 18px;
+    padding: 5px;
+    border-radius: 3px;
+    margin-left: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 15px;
+
+}
+
+.container .result-box{
+    padding-bottom: 20px;
+    display:none;
+}
+
+.container .result-box .message{
+    font-size: 24px;
+    text-align: center;
+    margin-top: 30px;
+    color:#90ee90;
+
+}
+
+.container .result-box h3{
+    font-size:15px;
+    white-space: nowrap;
+    text-align: center;
+    font-weight: 400;
+    margin-top: 8px;
+}
+
+.container .result-box h3 .result-answer{
+    font-weight: 600;
+}
+
+.container .result-box button{
+    all:unset;
+    padding: 5px;
+    width: 80px;
+    background: #ffa500;
+    color:#000;
+    border-radius: 5px;
+    text-align: center;
+    border:2px solid #000;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-left: 100px;
+    cursor:pointer;
+}
+
+.namee{
+    margin-top: 650px;
+    margin-left: 1400px;
+    background: #000;
+    border: 2px solid whitesmoke;
+    font-size: large;
+    color: white;
+}
